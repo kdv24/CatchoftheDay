@@ -2,11 +2,11 @@
   App
 */
 import React from 'react';
-import Catalyst from 'react-catalyst';
 import Header from './Header';
 import Fish from './Fish';
 import Order from './Order';
 import Inventory from './Inventory';
+import Catalyst from 'react-catalyst';
 import reactMixin from 'react-mixin';
 import autobind from 'autobind-decorator';
 

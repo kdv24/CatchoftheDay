@@ -20,7 +20,7 @@ class StorePicker extends React.Component {
     //get the data from the input
     var storeId = this.refs.storeId.value;
     //transition from <StorePicker /> to <App />
-    this.history.pushState(null, '/store/storeId');
+    this.history.pushState( null, '/store/' + storeId );
   }
   render() {
     console.log(this);
