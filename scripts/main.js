@@ -15,7 +15,7 @@ var routes = (
   <Router history={createHistory()}>
     <Route path="/" component={StorePicker}/>
     <Route path="/store/:storeId" component={App}/>
-    <Route path="/*" component={NotFound}/>
+    <Route path="*" component={NotFound}/>
   </Router>
 )
 

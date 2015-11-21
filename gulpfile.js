@@ -68,10 +68,11 @@ function buildScript(file, watch) {
   var props = {
     entries: ['./scripts/' + file],
     debug : true,
+    // this part allow autobind to work (ES7)
     transform:  [babelify.configure({stage : 0 })]
   };
 
-  // watchify() if watch requested, otherwise run browserify() once 
+  // watchify() if watch requested, otherwise run browserify() once
   var bundler = watch ? watchify(browserify(props)) : browserify(props);
 
   function rebundle() {
