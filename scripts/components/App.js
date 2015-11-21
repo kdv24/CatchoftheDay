@@ -20,7 +20,6 @@ var base = Rebase.createClass('https://kellys-catch.firebaseio.com/');
 @autobind
  class App extends React.Component {
    constructor() {
-
      super();
      this.state = {
        fishes: {},
@@ -99,9 +98,9 @@ var base = Rebase.createClass('https://kellys-catch.firebaseio.com/');
        <div className="catch-of-the-day">
          <div className="menu">
            <Header tagline="Fresh Seafood Market"/>
-         <ul className="list-of-fishes">
-           {Object.keys(this.state.fishes).map(this.renderFish)}
-         </ul>
+             <ul className="list-of-fishes">
+               {Object.keys(this.state.fishes).map(this.renderFish)}
+             </ul>
          </div>
          <Order
            fishes={this.state.fishes}
@@ -113,7 +112,7 @@ var base = Rebase.createClass('https://kellys-catch.firebaseio.com/');
            fishes={this.state.fishes}
            linkState={this.linkState.bind(this)}
            removeFish={this.removeFish}
-           />
+           {...this.props}/>
        </div>
      )
    }
