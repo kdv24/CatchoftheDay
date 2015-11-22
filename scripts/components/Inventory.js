@@ -1,7 +1,3 @@
-/*
-  Inventory
-*/
-
 import React from 'react';
 import AddFishForm from './AddFishForm';
 import autobind from 'autobind-decorator';
@@ -11,6 +7,7 @@ const ref = new Firebase('https://kellys-catch.firebaseio.com/');
       as needed.  eg- const ref= new Firebase(config.firebaseurl) */
 
 @autobind
+
 class Inventory extends React.Component {
 
   constructor() {
@@ -22,12 +19,10 @@ class Inventory extends React.Component {
   }
 
   authenticate(provider) {
-    console.log ("trying to auth with" + provider);
     ref.authWithOAuthPopup(provider, this.authHandler);
   }
 
   componentWillMount() {
-    console.log("checking for login");
     var token = localStorage.getItem('token');
     if(token) {
       ref.authWithCustomToken(token, this.authHandler);
@@ -48,11 +43,9 @@ class Inventory extends React.Component {
       return;
     }
 
-
     // save the login token in the browser
     localStorage.setItem('token', authData.token);
 
-    console.log(this.props.params.storeId);
     const storeRef = ref.child(this.props.params.storeId);
     storeRef.on('value', (snapshot)=> {
       var data = snapshot.val() || {};
@@ -79,6 +72,7 @@ class Inventory extends React.Component {
       </nav>
     )
   }
+
   renderInventory(key) {
     var linkState = this.props.linkState;
     return (
@@ -95,6 +89,7 @@ class Inventory extends React.Component {
       </div>
     )
   }
+
   render() {
     let logoutButton = <button onClick={this.logout}>Log Out</button>
 
@@ -128,6 +123,7 @@ class Inventory extends React.Component {
     )
   }
 };
+
   Inventory.propTypes = {
     addFish : React.PropTypes.func.isRequired,
     loadSamples : React.PropTypes.func.isRequired,
@@ -135,6 +131,5 @@ class Inventory extends React.Component {
     linkState : React.PropTypes.func.isRequired,
     removeFish : React.PropTypes.func.isRequired
   }
-
 
 export default Inventory;

@@ -1,15 +1,10 @@
-/*
-  Order
-*/
 import React from 'react';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import helpers from '../helpers.js';
 import autobind from 'autobind-decorator';
 
-// class Order extends React.Component {
-//
-// }
 @autobind
+
 class Order extends React.Component {
   renderOrder(key) {
     var fish = this.props.fishes[key];
@@ -30,13 +25,13 @@ class Order extends React.Component {
             transitionEnterTimeout={250}>
           <span key={count}>{count}</span>
         </CSSTransitionGroup>
-
         lbs {fish.name} {removeButton}
       </span>
       <span className="price">{helpers.formatPrice(count * fish.price)}</span>
       </li>
     )
   }
+  
   render() {
     var orderIds = Object.keys(this.props.order);
     var total = orderIds.reduce((prevTotal, key)=> {

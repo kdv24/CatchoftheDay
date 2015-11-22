@@ -1,22 +1,15 @@
-/*
-  Fish
-*/
-
 import React from 'react';
 import helpers from '../helpers.js';
 import autobind from 'autobind-decorator';
 
-
-// class Fish extends React.Component {
-//
-// }
 @autobind
+
 class Fish extends React.Component {
   onButtonClick() {
-    console.log("Going to add the fish: ", this.props.index);
     var key = this.props.index;
     this.props.addToOrder(key);
   }
+
   render () {
     var details = this.props.details;
     var isAvailable = (details.status === 'available' ? true : false);

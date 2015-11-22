@@ -10,7 +10,6 @@ import StorePicker from './components/StorePicker';
 /*
   Routes
 */
-
 var routes = (
   <Router history={createHistory()}>
     <Route path="/" component={StorePicker}/>

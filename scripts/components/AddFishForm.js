@@ -1,14 +1,8 @@
-/*
-  Add Fish Form
-*/
 import React from 'react';
 import autobind from 'autobind-decorator';
 
-
-// class AddFishForm extends React.Component {
-//
-// }
 @autobind
+
 class AddFishForm extends React.Component {
   createFish(event) {
     //1. Stop the form from submitting
