@@ -20,13 +20,14 @@ class StorePicker extends React.Component {
     //get the data from the input
     var storeId = this.refs.storeId.value;
     //transition from <StorePicker /> to <App />
+/****************DOES THIS BREAK MY OAUTH?*********************/
     this.history.pushState( null, '/store/' + storeId );
   }
   render() {
     console.log(this);
 
    return (
-     <form className="store-selector" onSubmit={this.goToStore}>
+     <form className="store-selector" onSubmit={this.goToStore()}>
        <h2>Please Enter a Store </h2>
      <input type="text" ref="storeId" defaultValue={helpers.getFunName()} required/>
      <input type="Submit"/>
